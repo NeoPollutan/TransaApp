@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54770623245806A5008A8BC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54770622245806A5008A8BC1 /* AppDelegate.swift */; };
+		54770625245806A5008A8BC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54770624245806A5008A8BC1 /* SceneDelegate.swift */; };
+		54770627245806A5008A8BC1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54770626245806A5008A8BC1 /* ContentView.swift */; };
+		54770629245806A5008A8BC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54770628245806A5008A8BC1 /* Assets.xcassets */; };
+		5477062C245806A5008A8BC1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5477062B245806A5008A8BC1 /* Preview Assets.xcassets */; };
+		5477062F245806A5008A8BC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5477062D245806A5008A8BC1 /* LaunchScreen.storyboard */; };
+		5477063A245806A5008A8BC1 /* TransaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54770639245806A5008A8BC1 /* TransaTests.swift */; };
+		54770645245806A5008A8BC1 /* TransaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54770644245806A5008A8BC1 /* TransaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54770636245806A5008A8BC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54770617245806A5008A8BC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5477061E245806A5008A8BC1;
+			remoteInfo = Transa;
+		};
+		54770641245806A5008A8BC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54770617245806A5008A8BC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5477061E245806A5008A8BC1;
+			remoteInfo = Transa;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5477061F245806A5008A8BC1 /* Transa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Transa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54770622245806A5008A8BC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		54770624245806A5008A8BC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		54770626245806A5008A8BC1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		54770628245806A5008A8BC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5477062B245806A5008A8BC1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5477062E245806A5008A8BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54770630245806A5008A8BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54770635245806A5008A8BC1 /* TransaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54770639245806A5008A8BC1 /* TransaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransaTests.swift; sourceTree = "<group>"; };
+		5477063B245806A5008A8BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54770640245806A5008A8BC1 /* TransaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54770644245806A5008A8BC1 /* TransaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransaUITests.swift; sourceTree = "<group>"; };
+		54770646245806A5008A8BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5477061C245806A5008A8BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54770632245806A5008A8BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5477063D245806A5008A8BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		54770616245806A5008A8BC1 = {
+			isa = PBXGroup;
+			children = (
+				54770621245806A5008A8BC1 /* Transa */,
+				54770638245806A5008A8BC1 /* TransaTests */,
+				54770643245806A5008A8BC1 /* TransaUITests */,
+				54770620245806A5008A8BC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		54770620245806A5008A8BC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5477061F245806A5008A8BC1 /* Transa.app */,
+				54770635245806A5008A8BC1 /* TransaTests.xctest */,
+				54770640245806A5008A8BC1 /* TransaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54770621245806A5008A8BC1 /* Transa */ = {
+			isa = PBXGroup;
+			children = (
+				54770622245806A5008A8BC1 /* AppDelegate.swift */,
+				54770624245806A5008A8BC1 /* SceneDelegate.swift */,
+				54770626245806A5008A8BC1 /* ContentView.swift */,
+				54770628245806A5008A8BC1 /* Assets.xcassets */,
+				5477062D245806A5008A8BC1 /* LaunchScreen.storyboard */,
+				54770630245806A5008A8BC1 /* Info.plist */,
+				5477062A245806A5008A8BC1 /* Preview Content */,
+			);
+			path = Transa;
+			sourceTree = "<group>";
+		};
+		5477062A245806A5008A8BC1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5477062B245806A5008A8BC1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		54770638245806A5008A8BC1 /* TransaTests */ = {
+			isa = PBXGroup;
+			children = (
+				54770639245806A5008A8BC1 /* TransaTests.swift */,
+				5477063B245806A5008A8BC1 /* Info.plist */,
+			);
+			path = TransaTests;
+			sourceTree = "<group>";
+		};
+		54770643245806A5008A8BC1 /* TransaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				54770644245806A5008A8BC1 /* TransaUITests.swift */,
+				54770646245806A5008A8BC1 /* Info.plist */,
+			);
+			path = TransaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5477061E245806A5008A8BC1 /* Transa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54770649245806A5008A8BC1 /* Build configuration list for PBXNativeTarget "Transa" */;
+			buildPhases = (
+				5477061B245806A5008A8BC1 /* Sources */,
+				5477061C245806A5008A8BC1 /* Frameworks */,
+				5477061D245806A5008A8BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Transa;
+			productName = Transa;
+			productReference = 5477061F245806A5008A8BC1 /* Transa.app */;
+			productType = "com.apple.product-type.application";
+		};
+		54770634245806A5008A8BC1 /* TransaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5477064C245806A5008A8BC1 /* Build configuration list for PBXNativeTarget "TransaTests" */;
+			buildPhases = (
+				54770631245806A5008A8BC1 /* Sources */,
+				54770632245806A5008A8BC1 /* Frameworks */,
+				54770633245806A5008A8BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54770637245806A5008A8BC1 /* PBXTargetDependency */,
+			);
+			name = TransaTests;
+			productName = TransaTests;
+			productReference = 54770635245806A5008A8BC1 /* TransaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5477063F245806A5008A8BC1 /* TransaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5477064F245806A5008A8BC1 /* Build configuration list for PBXNativeTarget "TransaUITests" */;
+			buildPhases = (
+				5477063C245806A5008A8BC1 /* Sources */,
+				5477063D245806A5008A8BC1 /* Frameworks */,
+				5477063E245806A5008A8BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54770642245806A5008A8BC1 /* PBXTargetDependency */,
+			);
+			name = TransaUITests;
+			productName = TransaUITests;
+			productReference = 54770640245806A5008A8BC1 /* TransaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54770617245806A5008A8BC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Rizky Adipratama Ruddyar";
+				TargetAttributes = {
+					5477061E245806A5008A8BC1 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					54770634245806A5008A8BC1 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 5477061E245806A5008A8BC1;
+					};
+					5477063F245806A5008A8BC1 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 5477061E245806A5008A8BC1;
+					};
+				};
+			};
+			buildConfigurationList = 5477061A245806A5008A8BC1 /* Build configuration list for PBXProject "Transa" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 54770616245806A5008A8BC1;
+			productRefGroup = 54770620245806A5008A8BC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5477061E245806A5008A8BC1 /* Transa */,
+				54770634245806A5008A8BC1 /* TransaTests */,
+				5477063F245806A5008A8BC1 /* TransaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5477061D245806A5008A8BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5477062F245806A5008A8BC1 /* LaunchScreen.storyboard in Resources */,
+				5477062C245806A5008A8BC1 /* Preview Assets.xcassets in Resources */,
+				54770629245806A5008A8BC1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54770633245806A5008A8BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5477063E245806A5008A8BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5477061B245806A5008A8BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54770623245806A5008A8BC1 /* AppDelegate.swift in Sources */,
+				54770625245806A5008A8BC1 /* SceneDelegate.swift in Sources */,
+				54770627245806A5008A8BC1 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54770631245806A5008A8BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5477063A245806A5008A8BC1 /* TransaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5477063C245806A5008A8BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54770645245806A5008A8BC1 /* TransaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54770637245806A5008A8BC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5477061E245806A5008A8BC1 /* Transa */;
+			targetProxy = 54770636245806A5008A8BC1 /* PBXContainerItemProxy */;
+		};
+		54770642245806A5008A8BC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5477061E245806A5008A8BC1 /* Transa */;
+			targetProxy = 54770641245806A5008A8BC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5477062D245806A5008A8BC1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5477062E245806A5008A8BC1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		54770647245806A5008A8BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		54770648245806A5008A8BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5477064A245806A5008A8BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Transa/Preview Content\"";
+				DEVELOPMENT_TEAM = 2MFA5A335Y;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Transa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RAR.Transa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5477064B245806A5008A8BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Transa/Preview Content\"";
+				DEVELOPMENT_TEAM = 2MFA5A335Y;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Transa/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RAR.Transa;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5477064D245806A5008A8BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MFA5A335Y;
+				INFOPLIST_FILE = TransaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RAR.TransaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transa.app/Transa";
+			};
+			name = Debug;
+		};
+		5477064E245806A5008A8BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MFA5A335Y;
+				INFOPLIST_FILE = TransaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RAR.TransaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Transa.app/Transa";
+			};
+			name = Release;
+		};
+		54770650245806A5008A8BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MFA5A335Y;
+				INFOPLIST_FILE = TransaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RAR.TransaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Transa;
+			};
+			name = Debug;
+		};
+		54770651245806A5008A8BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2MFA5A335Y;
+				INFOPLIST_FILE = TransaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = RAR.TransaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Transa;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5477061A245806A5008A8BC1 /* Build configuration list for PBXProject "Transa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54770647245806A5008A8BC1 /* Debug */,
+				54770648245806A5008A8BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54770649245806A5008A8BC1 /* Build configuration list for PBXNativeTarget "Transa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5477064A245806A5008A8BC1 /* Debug */,
+				5477064B245806A5008A8BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5477064C245806A5008A8BC1 /* Build configuration list for PBXNativeTarget "TransaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5477064D245806A5008A8BC1 /* Debug */,
+				5477064E245806A5008A8BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5477064F245806A5008A8BC1 /* Build configuration list for PBXNativeTarget "TransaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54770650245806A5008A8BC1 /* Debug */,
+				54770651245806A5008A8BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54770617245806A5008A8BC1 /* Project object */;
+}

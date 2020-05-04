@@ -13,7 +13,7 @@ extension ExpenseLog: Identifiable
 {
     var categoryEnum: Category
     {
-        Category(rawValue: category ?? "") ?? .other
+        Category(rawValue: category ?? "") ?? .lainnya
     }
     var nameText: String
     {

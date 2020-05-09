@@ -15,7 +15,7 @@ class CoreDataStack {
     var viewContext: NSManagedObjectContext { persistentContainer.viewContext }
     
     private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: containerName)
+        let container = NSPersistentCloudKitContainer(name: containerName)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 print(error.localizedDescription)

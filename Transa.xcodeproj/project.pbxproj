@@ -49,6 +49,7 @@
 		54AF77C82466A28C000059FF /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF77C62466A28C000059FF /* Profile+CoreDataClass.swift */; };
 		54AF77C92466A28C000059FF /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF77C72466A28C000059FF /* Profile+CoreDataProperties.swift */; };
 		54AF77CB2467F50D000059FF /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF77CA2467F50D000059FF /* imagePicker.swift */; };
+		54B34B9D246AA6E600335428 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B34B9C246AA6E600335428 /* LocalNotificationManager.swift */; };
 		54FD709B245AD85100889F41 /* ExpenseTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54FD7099245AD85100889F41 /* ExpenseTracker.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		54AF77C62466A28C000059FF /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		54AF77C72466A28C000059FF /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		54AF77CA2467F50D000059FF /* imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePicker.swift; sourceTree = "<group>"; };
+		54B34B9C246AA6E600335428 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		54FD709A245AD85100889F41 /* ExpenseTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseTracker.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +247,7 @@
 				5477065B245807AF008A8BC1 /* Logs */,
 				5477065F245807AF008A8BC1 /* ContentView.swift */,
 				54770660245807AF008A8BC1 /* Common Views */,
+				54B34B9C246AA6E600335428 /* LocalNotificationManager.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				54AF77CB2467F50D000059FF /* imagePicker.swift in Sources */,
 				5477068D24580958008A8BC1 /* HomeView.swift in Sources */,
 				5477068C24580958008A8BC1 /* ProfileEmpty.swift in Sources */,
+				54B34B9D246AA6E600335428 /* LocalNotificationManager.swift in Sources */,
 				54770671245807AF008A8BC1 /* DashboardTabView.swift in Sources */,
 				54AF77C92466A28C000059FF /* Profile+CoreDataProperties.swift in Sources */,
 				54770698245809A7008A8BC1 /* OnboardingCard.swift in Sources */,

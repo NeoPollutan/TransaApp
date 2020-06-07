@@ -46,6 +46,7 @@
 		5477069A245809A7008A8BC1 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54770694245809A7008A8BC1 /* BoardingView.swift */; };
 		547F537C245ADA3C0004E65A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F537B245ADA3C0004E65A /* CoreDataStack.swift */; };
 		547F537E245ADE750004E65A /* ExpenseLog+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F537D245ADE750004E65A /* ExpenseLog+Extension.swift */; };
+		549A4196248D3340003D93DF /* FormEditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549A4195248D3340003D93DF /* FormEditProfile.swift */; };
 		54AF77C82466A28C000059FF /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF77C62466A28C000059FF /* Profile+CoreDataClass.swift */; };
 		54AF77C92466A28C000059FF /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF77C72466A28C000059FF /* Profile+CoreDataProperties.swift */; };
 		54AF77CB2467F50D000059FF /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF77CA2467F50D000059FF /* imagePicker.swift */; };
@@ -118,6 +119,7 @@
 		54770694245809A7008A8BC1 /* BoardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		547F537B245ADA3C0004E65A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		547F537D245ADE750004E65A /* ExpenseLog+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExpenseLog+Extension.swift"; sourceTree = "<group>"; };
+		549A4195248D3340003D93DF /* FormEditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormEditProfile.swift; sourceTree = "<group>"; };
 		54AF77C62466A28C000059FF /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		54AF77C72466A28C000059FF /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		54AF77CA2467F50D000059FF /* imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePicker.swift; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 				5477068424580958008A8BC1 /* ProfileFilled.swift */,
 				5477068524580958008A8BC1 /* ProfileEmpty.swift */,
 				54AF77CA2467F50D000059FF /* imagePicker.swift */,
+				549A4195248D3340003D93DF /* FormEditProfile.swift */,
 			);
 			path = Profil;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				54770673245807AF008A8BC1 /* LogListView.swift in Sources */,
 				5477067E245807AF008A8BC1 /* CategoryImageView.swift in Sources */,
 				54770677245807AF008A8BC1 /* SelectSortOrderView.swift in Sources */,
+				549A4196248D3340003D93DF /* FormEditProfile.swift in Sources */,
 				54770675245807AF008A8BC1 /* LogsTabView.swift in Sources */,
 				54770672245807AF008A8BC1 /* CategoryRowView.swift in Sources */,
 				54770678245807AF008A8BC1 /* PieChartRow.swift in Sources */,

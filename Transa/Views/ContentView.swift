@@ -18,7 +18,7 @@ struct ContentView: View {
             // check whether biometric authentication is possible
             if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
                 // it's possible, so go ahead and use it
-                let reason = "We need to make sure your data is protected."
+                let reason = "Kami membutuhkan akses faceID anda untuk membantu menjaga keamanan data."
 
                 context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                     // authentication has now completed

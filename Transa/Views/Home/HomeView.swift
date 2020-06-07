@@ -15,6 +15,8 @@ struct HomeView: View {
         //hitung total pengeluaran dari data har ini
     
     @Environment(\.managedObjectContext) var moc
+    
+    
     @FetchRequest(entity: Profile.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Profile.namaUser, ascending: true),
         NSSortDescriptor(keyPath: \Profile.limitHarian, ascending: true),
         NSSortDescriptor(keyPath: \Profile.photo, ascending: true)
@@ -141,17 +143,33 @@ struct HomeView: View {
                             HStack
                                 {
                                     Spacer()
+                                    if self.result.count == 0
+                                    {
+                                        Text(" ")
+                                    }
+                                    else
+                                    {
+                                        Text("Rp \(self.pengeluaranhariini),00.")
+                                                                           .font(.system(size: 20))
+                                                                           .fontWeight(.bold).foregroundColor(.white) .multilineTextAlignment(.trailing) .padding(.top, 40)
+                                    }
+                               
                                     
-                                    Text("Rp \(self.pengeluaranhariini),00.")
-                                        .font(.system(size: 20))
-                                        .fontWeight(.bold).foregroundColor(.white) .multilineTextAlignment(.trailing) .padding(.top, 40)
                                     Spacer()
                                     
-                                    ForEach(self.profiles, id: \.self)
-                                    { profilLimit in
-                                        Text(("Rp \(profilLimit.limitHarian ?? ""),00."))
-                                        .font(.system(size: 20)).fontWeight(.bold) .foregroundColor(.white) .multilineTextAlignment(.trailing)
-                                        .padding(.top, 40)
+                                    if self.profiles.count == 0
+                                    {
+                                        Text(" ")
+                                    }
+                                    else
+                                    {
+                                        ForEach(self.profiles, id: \.self)
+                                        { profilLimit in
+                                            Text(("Rp \(profilLimit.limitHarian ?? ""),00."))
+                                            .font(.system(size: 20)).fontWeight(.bold) .foregroundColor(.white) .multilineTextAlignment(.trailing)
+                                            .padding(.top, 40)
+                                        }
+
                                     }
                                     
                                     Spacer()
@@ -188,28 +206,37 @@ struct HomeView: View {
                             
                             //DaftarTransaksiEmpty()
                            
-                            VStack
-                                {
-                                    ForEach(self.result)
+                            if self.result.count == 0
+                            {
+                                DaftarTransaksiEmpty()
+                            }
+                            else
+                            {
+                                VStack
                                     {
-                                        (log: ExpenseLog) in
-                                        
-                                        
-                                        ZStack{
-                                        HStack(spacing: 16) {
-                                                               CategoryImageView(category: log.categoryEnum)
-                                                               VStack(alignment: .leading, spacing: 8) {
-                                                                   Text(log.nameText).font(.headline)
-                                                                   Text(log.dateText).font(.subheadline)
-                                                               }
-                                                               Spacer()
-                                                               Text(log.amountText).font(.headline)
+                                        ForEach(self.result)
+                                        {
+                                            (log: ExpenseLog) in
                                             
-                                        } .padding(.vertical, 8) .padding(.horizontal,4)
-                                          }
-                                        
-                                    }
-                            }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).edgesIgnoringSafeArea(.all))
+                                            
+                                            
+                                            ZStack{
+                                            HStack(spacing: 16) {
+                                                                   CategoryImageView(category: log.categoryEnum)
+                                                                   VStack(alignment: .leading, spacing: 8) {
+                                                                       Text(log.nameText).font(.headline)
+                                                                       Text(log.dateText).font(.subheadline)
+                                                                   }
+                                                                   Spacer()
+                                                                   Text(log.amountText).font(.headline)
+                                                
+                                            } .padding(.vertical, 8) .padding(.horizontal,4)
+                                              }
+                                            
+                                        }
+                                }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).edgesIgnoringSafeArea(.all))
+                            }
+
 
 
                             
@@ -225,7 +252,7 @@ struct HomeView: View {
             .sheet(isPresented: self.$isSheet) {
                               
                               if self.homeSheet == HomeSheet.Profile{
-                                FormProfile().environment(\.managedObjectContext, self.moc)
+                                ProfileFilled().environment(\.managedObjectContext, self.moc)
                                 
                 }
                 else if self.homeSheet == HomeSheet.Add{

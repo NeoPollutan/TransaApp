@@ -16,8 +16,7 @@ struct LogFormView: View {
     @State var category: Category = .kebutuhan
     @State var date: Date = Date()
     
-    @Environment(\.presentationMode)
-    var presentationMode
+    @Environment(\.presentationMode) var presentationMode
     
     var logToEdit: ExpenseLog?
     var context: NSManagedObjectContext

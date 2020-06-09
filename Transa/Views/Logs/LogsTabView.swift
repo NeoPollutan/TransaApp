@@ -57,7 +57,7 @@ struct LogsTabView: View {
                 LogFormView(context: self.context)
             }
             .navigationBarItems(trailing: Button(action: addTapped) { Text("Tambah") })
-            .navigationBarTitle("Log Pengeluaran", displayMode: .inline)
+            .navigationBarTitle("Rangkuman", displayMode: .inline)
         }
     }
     

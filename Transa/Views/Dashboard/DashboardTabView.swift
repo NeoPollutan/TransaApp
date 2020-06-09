@@ -52,14 +52,14 @@ struct DashboardTabView: View {
             
             if totalExpenses == nil && categoriesSum == nil {
                 Spacer()
-                
-                Image("listkosong").resizable().frame(width: 168, height: 157).padding(.top)
-
-                Text("Belum Ada Data Transaksi Pengeluaran\n")
-                    .multilineTextAlignment(.center)
-                    .font(.headline)
-                    .padding(.all)
-                
+                ZStack {
+                    Rectangle().foregroundColor(.white) .frame(height: 360)
+                    VStack {
+                        Image("listkosong").resizable().frame(width: 168, height: 157).padding(.top)
+                        Text("Chart pengeluaran kosong").foregroundColor(Color.init(#colorLiteral(red: 0.1489486992, green: 0.390168488, blue: 0.555157125, alpha: 1))).bold().padding([.top, .bottom],10)
+                        Text("Silahkan tambahkan catatan pengeluaran keuangan.").font(.subheadline).foregroundColor(.gray).multilineTextAlignment(.center).padding(.horizontal,60)
+                    }.padding()
+                }
                 Spacer()
                 
             }

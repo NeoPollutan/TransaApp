@@ -11,40 +11,105 @@ import CoreData
 
 struct HomeView: View {
     
-        //filter data berdasarkan data hari ini
-        //hitung total pengeluaran dari data har ini
     
     @Environment(\.managedObjectContext) var moc
     
     
     @FetchRequest(entity: Profile.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Profile.namaUser, ascending: true),
-        NSSortDescriptor(keyPath: \Profile.limitHarian, ascending: true),
-        NSSortDescriptor(keyPath: \Profile.photo, ascending: true)
+                                                              NSSortDescriptor(keyPath: \Profile.limitHarian, ascending: true),
+                                                              NSSortDescriptor(keyPath: \Profile.photo, ascending: true)
         ]
     ) var profiles : FetchedResults<Profile>
     
     @State var photoUser : Data = .init(count: 0)
     
     
-     @Environment(\.managedObjectContext)
-     var context: NSManagedObjectContext
+    @Environment(\.managedObjectContext)
+    var context: NSManagedObjectContext
     
     
-
+    class DateHelper{
+        internal class func startOfDay(day: NSDate) -> NSDate {
+            let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let unitFlags: NSCalendar.Unit = [.minute, .hour, .day, .month, .year]
+            var todayComponents = gregorian!.components(unitFlags, from: day as Date)
+            todayComponents.hour = 0
+            todayComponents.minute = 0
+            return (gregorian?.date(from: todayComponents))! as NSDate
+        }
+        
+        internal class func endOfDay(day: NSDate) -> NSDate {
+            let gregorian = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
+            let unitFlags: NSCalendar.Unit = [.minute, .hour, .day, .month, .year]
+            var todayComponents = gregorian!.components(unitFlags, from: day as Date)
+            todayComponents.hour = 23
+            todayComponents.minute = 59
+            return (gregorian?.date(from: todayComponents))! as NSDate
+        }
+    }
+    
+    
     @FetchRequest(
         entity: ExpenseLog.entity(),
         sortDescriptors: [
             NSSortDescriptor(keyPath: \ExpenseLog.date, ascending: false)
         ]
-        ,predicate: NSPredicate(value: Calendar.current.isDateInToday(Date()))
+        ,predicate: NSPredicate(format: "(date => %@) AND (date <= %@)", DateHelper.startOfDay(day: NSDate()), DateHelper.endOfDay(day: NSDate()))
     )
     private var result: FetchedResults<ExpenseLog>
     
     
+
+    
+    @FetchRequest(
+        entity: ExpenseLog.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \ExpenseLog.amount, ascending: false)
+        ]
+        ,predicate: NSPredicate(format: "(date => %@) AND (date <= %@)", DateHelper.startOfDay(day: NSDate()), DateHelper.endOfDay(day: NSDate()))
+    )
+    var fetchSumDaily: FetchedResults<ExpenseLog>
+    
+    
+    
+    var sum: Decimal {
+        fetchSumDaily.reduce(0) { $0 + $1.amount!.decimalValue }
+    }
+    
+    var sumText: String
+    {
+        NSDecimalNumber(decimal: self.sum).stringValue
+    }
+        
+   
+    
+    
+    
+
+    
+    
+//        @State var totalDaily: Decimal?
+//
+//    func sumDaily(){
+//        let sumDailys = fetchSumDaily.reduce(Decimal(0.0)) {
+//            if let amount = $1.amount as Decimal? {
+//                return $0 + amount
+//            }
+//
+//            return $0
+//        }
+//        totalDaily = sumDailys
+//
+//    }
+    
+ 
+    
+    
+    
     let hour = Calendar.current.component(.hour, from: Date()) 
-//    @State var nama = "Neo"
+    
     @State var pengeluaranhariini = "250.000"
-//    @State var limitharian = "275.000"
+    
     
     
     enum HomeSheet{
@@ -55,7 +120,6 @@ struct HomeView: View {
     @State var isSheet : Bool = false
     @State var homeSheet : HomeSheet = .Profile
     
- 
     
     
     var body: some View {
@@ -69,52 +133,51 @@ struct HomeView: View {
                         ZStack
                             {
                                 Image("kotakcardgreeting") .resizable()
-                                    //                                    .aspectRatio(contentMode: .fill)
+                                    
                                     .frame(width: geometry.frame(in: .global).width, height: geometry.frame(in: .global).height/4)
                                     .offset(y: -50)
                                 
                                 HStack{
                                     
-                                  
-                                                    VStack(alignment: .leading){
-                                                          
-                                                        
-                                                    Text("\(getGreeting()),")
-                                                            .font(.system(size: 22))
-                                                            .fontWeight(.semibold).foregroundColor(Color.init(#colorLiteral(red: 1, green: 0.888686657, blue: 0.7034975886, alpha: 1))) .padding(.top, 40)
-                                                        
-                                                ForEach(self.profiles, id: \.self)
-                                                                                                { profilNama in
-                                                    Text("\(profilNama.namaUser ?? "")")
-                                                              .font(.system(size: 22))
-                                                              .fontWeight(.semibold).foregroundColor(Color.init(#colorLiteral(red: 1, green: 0.888686657, blue: 0.7034975886, alpha: 1))) .padding(.top, 1)
-                                                        }
-                                                    
-                                                          
-                                                          Text("Jangan lupa catat pengeluaranmu hari ini")
-                                                              .font(.system(size: 17)).fontWeight(.semibold).foregroundColor(.white)
-                                                              .padding(.top, 10)
-                                                          
-                                                          
-                                                          
-                                                      }.padding()
+                                    
+                                    VStack(alignment: .leading){
+                                        
+                                        
+                                        Text("\(getGreeting()),")
+                                            .font(.system(size: 22))
+                                            .fontWeight(.semibold).foregroundColor(Color.init(#colorLiteral(red: 1, green: 0.888686657, blue: 0.7034975886, alpha: 1))) .padding(.top, 40)
+                                        
+                                        ForEach(self.profiles, id: \.self)
+                                        { profilNama in
+                                            Text("\(profilNama.namaUser ?? "")")
+                                                .font(.system(size: 22))
+                                                .fontWeight(.semibold).foregroundColor(Color.init(#colorLiteral(red: 1, green: 0.888686657, blue: 0.7034975886, alpha: 1))) .padding(.top, 1)
+                                        }
+                                        
+                                        
+                                        Text("Jangan lupa catat pengeluaranmu hari ini")
+                                            .font(.system(size: 17)).fontWeight(.semibold).foregroundColor(.white)
+                                            .padding(.top, 10)
+                                        
+                                        
+                                        
+                                    }.padding()
                                     
                                     
-  
+                                    
                                     
                                     Spacer()
                                     
-                              ForEach(self.profiles, id: \.self)
-                                { profilPhoto in
+                                    ForEach(self.profiles, id: \.self)
+                                    { profilPhoto in
                                         VStack{
                                             Image(uiImage: UIImage(data: profilPhoto.photo ?? self.photoUser)!).resizable().frame(width: 55, height: 55).scaledToFit().overlay(Circle().stroke(Color.init(#colorLiteral(red: 1, green: 0.888686657, blue: 0.7034975886, alpha: 1)), lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color.init(#colorLiteral(red: 1, green: 0.888686657, blue: 0.7034975886, alpha: 1)), radius: 5).onTapGesture {
-//                                                self.isSheet = true
-//                                                self.homeSheet = HomeSheet.Profile
+                                                
                                             }.padding()
                                             
-                                        
+                                            
                                         }
-
+                                        
                                     }
                                 }.offset(y: -60)
                                 
@@ -124,7 +187,7 @@ struct HomeView: View {
                                     .frame(width: geometry.frame(in: .global).width/4, height: geometry.frame(in: .global).height/8) .onTapGesture {
                                         self.isSheet = true
                                         self.homeSheet = HomeSheet.Add
-                                    
+                                        
                                 }
                                 .padding(.top, 100)
                                 
@@ -145,31 +208,32 @@ struct HomeView: View {
                                     Spacer()
                                     if self.result.count == 0
                                     {
-                                        Text(" ")
+                                        Text("") .padding(.trailing, 180)
                                     }
                                     else
                                     {
-                                        Text("Rp \(self.pengeluaranhariini),00.")
-                                                                           .font(.system(size: 20))
-                                                                           .fontWeight(.bold).foregroundColor(.white) .multilineTextAlignment(.trailing) .padding(.top, 40)
+                                        Text("IDR \(self.sumText),00.")
+                                            .font(.system(size: 20))
+                                            .fontWeight(.bold).foregroundColor(.white) .multilineTextAlignment(.trailing) .padding(.top, 40)
                                     }
-                               
+                                    
                                     
                                     Spacer()
                                     
                                     if self.profiles.count == 0
                                     {
-                                        Text(" ")
+                                        Text("") .padding(.leading, 180)
+                                        
                                     }
                                     else
                                     {
                                         ForEach(self.profiles, id: \.self)
                                         { profilLimit in
-                                            Text(("Rp \(profilLimit.limitHarian ?? ""),00."))
-                                            .font(.system(size: 20)).fontWeight(.bold) .foregroundColor(.white) .multilineTextAlignment(.trailing)
-                                            .padding(.top, 40)
+                                            Text(("IDR \(profilLimit.limitHarian ?? ""),00."))
+                                                .font(.system(size: 20)).fontWeight(.bold) .foregroundColor(.white) .multilineTextAlignment(.trailing)
+                                                .padding(.top, 40)
                                         }
-
+                                        
                                     }
                                     
                                     Spacer()
@@ -192,6 +256,7 @@ struct HomeView: View {
                             Button(action: {
                                 self.isSheet = true
                                 self.homeSheet = HomeSheet.Add
+
                             }) {
                                 Text("Tambah")
                                     .font(.system(size: 17)).fontWeight(.bold).foregroundColor(Color.init(#colorLiteral(red: 0.1489486992, green: 0.390168488, blue: 0.555157125, alpha: 1))) .multilineTextAlignment(.leading)
@@ -201,11 +266,7 @@ struct HomeView: View {
                     
                     ScrollView
                         {
-                            //nanti di if else
                             
-                            
-                            //DaftarTransaksiEmpty()
-                           
                             if self.result.count == 0
                             {
                                 DaftarTransaksiEmpty()
@@ -214,6 +275,7 @@ struct HomeView: View {
                             {
                                 VStack
                                     {
+                                        // i want to put list of the only today inputted data here
                                         ForEach(self.result)
                                         {
                                             (log: ExpenseLog) in
@@ -221,47 +283,47 @@ struct HomeView: View {
                                             
                                             
                                             ZStack{
-                                            HStack(spacing: 16) {
-                                                                   CategoryImageView(category: log.categoryEnum)
-                                                                   VStack(alignment: .leading, spacing: 8) {
-                                                                       Text(log.nameText).font(.headline)
-                                                                       Text(log.dateText).font(.subheadline)
-                                                                   }
-                                                                   Spacer()
-                                                                   Text(log.amountText).font(.headline)
-                                                
-                                            } .padding(.vertical, 8) .padding(.horizontal,4)
-                                              }
+                                                HStack(spacing: 16) {
+                                                    CategoryImageView(category: log.categoryEnum) .padding(.leading , 8)
+                                                    VStack(alignment: .leading, spacing: 8) {
+                                                        Text(log.nameText).font(.headline)
+                                                        Text(log.dateText).font(.subheadline)
+                                                    }
+                                                    Spacer()
+                                                    Text(log.amountText).font(.headline).padding(.trailing , 8)
+                                                    
+                                                } .padding(.vertical, 8) .padding(.horizontal,4)
+                                            }
                                             
                                         }
                                 }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))).edgesIgnoringSafeArea(.all))
                             }
-
-
-
                             
                             
                             
-                        
-
+                            
+                            
+                            
+                            
+                            
                     }
                     
                     
             }.background(Rectangle().foregroundColor(Color.init(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))).edgesIgnoringSafeArea(.all))
-            
-            .sheet(isPresented: self.$isSheet) {
-                              
-                              if self.homeSheet == HomeSheet.Profile{
-                                ProfileFilled().environment(\.managedObjectContext, self.moc)
-                                
-                }
-                else if self.homeSheet == HomeSheet.Add{
-                LogFormView(context: self.context)
-                                
-                }
                 
+                .sheet(isPresented: self.$isSheet) {
+                    
+                    if self.homeSheet == HomeSheet.Profile{
+                        ProfileFilled().environment(\.managedObjectContext, self.moc)
+                        
+                    }
+                    else if self.homeSheet == HomeSheet.Add{
+                        LogFormView(context: self.context)
+                        
+                    }
+                    
             }
-
+            
             
             
         }
@@ -269,22 +331,22 @@ struct HomeView: View {
 }
 
 private func getGreeting() -> String {
-     let hour = Calendar.current.component(.hour, from: Date())
-
-     switch hour {
-     case 0..<10:
-         return "Selamat Pagi"
-     case 10..<15:
-         return "Selamat Siang"
-     case 15..<18:
-         return "Selamat Sore"
-     case 18..<24:
-         return "Selamat Malam"
-     default:
-         break
-     }
-     return "Hello"
- }
+    let hour = Calendar.current.component(.hour, from: Date())
+    
+    switch hour {
+    case 0..<10:
+        return "Selamat Pagi"
+    case 10..<15:
+        return "Selamat Siang"
+    case 15..<18:
+        return "Selamat Sore"
+    case 18..<24:
+        return "Selamat Malam"
+    default:
+        break
+    }
+    return "Hello"
+}
 
 
 struct HomeView_Previews: PreviewProvider {

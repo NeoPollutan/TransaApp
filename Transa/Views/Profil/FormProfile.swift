@@ -69,20 +69,20 @@ struct FormProfile: View {
                     Image("wallet").resizable().frame(width: 22, height: 20)
                     Text("Penghasilan Bulanan").font(.headline).fontWeight(.medium).foregroundColor(.black)
                     })
-                {
-                    TextField("Masukan penghasilan bulanan anda", text: $penghasilanUser)
-                        .keyboardType(.numberPad)
-                }
+                    {
+                    TextField("Masukan penghasilan bulanan anda", value: $penghasilanUser, formatter: Utils.numberFormatter)
+                        .keyboardType(.numbersAndPunctuation)
+                    }
                 
                 
                 Section(header: HStack {
                     Image("safebox").resizable().frame(width: 22, height: 20)
                     Text("Limit Pengeluaran Harian").font(.headline).fontWeight(.medium).foregroundColor(.black)
                 }){
-                    TextField("Masukan limit pengeluaran harian anda", text: $limitUser)
-                        .keyboardType(.numberPad)
-                    
+                TextField("Masukan limit pengeluaran harian anda", value: $limitUser, formatter: Utils.numberFormatter)
+                    .keyboardType(.numbersAndPunctuation)
                 }
+                
             }
                 
             .sheet(isPresented: self.$show, content: {

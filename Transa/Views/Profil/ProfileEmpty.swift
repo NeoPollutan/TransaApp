@@ -26,7 +26,7 @@ struct ProfileEmpty: View {
                                 {
 
                                     Image("noprofile").resizable().frame(width: 125, height: 125).scaledToFit().overlay(Circle().stroke(Color.init(#colorLiteral(red: 1, green: 0.888686657, blue: 0.7034975886, alpha: 1)), lineWidth: 5)).clipShape(Ellipse()).shadow(color: Color.init(#colorLiteral(red: 1, green: 0.888686657, blue: 0.7034975886, alpha: 1)), radius: 10).padding()                                    
-                                    Text("Belum Ada Profile")
+                                    Text("Belum Ada Profil")
                                         .font(.system(size: 17)).fontWeight(.bold).foregroundColor(Color.init(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))}
                         }
                         

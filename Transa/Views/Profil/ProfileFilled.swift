@@ -102,7 +102,7 @@ struct ProfileFilled: View {
                                     VStack
                                         {
                                             Text("Penghasilan Bulanan").font(.system(size: 15)).fontWeight(.semibold).foregroundColor(Color.init(#colorLiteral(red: 0.4895541072, green: 0.469949007, blue: 0.4702165127, alpha: 1))).padding(.bottom, 6)
-                                            Text(("Rp \(save.penghasilan ?? ""),00."))
+                                            Text(("IDR \(save.penghasilan ?? ""),00."))
                                                 .font(.system(size: 20)).fontWeight(.regular) .foregroundColor(.black)
                                     }
                                 }
@@ -112,7 +112,7 @@ struct ProfileFilled: View {
                                     VStack
                                         {
                                             Text("Limit Harian").font(.system(size: 15)).fontWeight(.semibold).foregroundColor(Color.init(#colorLiteral(red: 0.4895541072, green: 0.469949007, blue: 0.4702165127, alpha: 1))).padding(.bottom, 6)
-                                            Text(("Rp \(save.limitHarian ?? ""),00."))
+                                            Text(("IDR \(save.limitHarian ?? ""),00."))
                                                 .font(.system(size: 20)).fontWeight(.regular) .foregroundColor(.black)
                                     }
                                     
